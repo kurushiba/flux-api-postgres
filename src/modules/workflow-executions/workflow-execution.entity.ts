@@ -31,6 +31,6 @@ export class WorkflowExecution {
   @CreateDateColumn()
   startedAt: Date;
 
-  @Column({ type: 'datetime', nullable: true })
+  @Column({ type: 'timestamp', nullable: true })
   finishedAt: Date | null;
 }

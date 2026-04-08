@@ -14,8 +14,7 @@ import { inngest } from './inngest/client';
 import { executeWorkflowFunction } from './inngest/functions';
 import datasource from './datasource';
 
-require('dotenv').config();
-const DEFAULT_PORT = 8888;
+const DEFAULT_PORT = parseInt(process.env.PORT || '8888', 10);
 const MAX_PORT_ATTEMPTS = 10;
 
 const app: Express = express();
