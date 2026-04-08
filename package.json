@@ -1,0 +1,51 @@
+{
+  "name": "node-api-template",
+  "version": "1.0.0",
+  "description": "Node API Template",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "concurrently \"ts-node-dev -r tsconfig-paths/register --respawn --transpile-only src/index.ts\" \"npx inngest-cli@latest dev -u http://localhost:8888/api/inngest\"",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migration:generate": "npm run typeorm -- migration:generate -d src/datasource.ts",
+    "migration:run": "npm run typeorm -- migration:run -d src/datasource.ts",
+    "migration:revert": "npm run typeorm -- migration:revert -d src/datasource.ts"
+  },
+  "keywords": [
+    "express",
+    "typescript",
+    "typeorm",
+    "sqlite"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@inngest/realtime": "^0.4.6",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "handlebars": "^4.7.8",
+    "inngest": "^3.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.27",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.4",
+    "@types/handlebars": "^4.0.40",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^24.9.1",
+    "@types/uuid": "^10.0.0",
+    "concurrently": "^9.1.2",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.9.3"
+  }
+}

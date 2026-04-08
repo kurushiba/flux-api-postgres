@@ -1,0 +1,4 @@
+node_modules
+trello-clone.sqlite
+uploads/*
+data/*
