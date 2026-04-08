@@ -22,7 +22,7 @@ export class InitPostgres1762220104380 implements MigrationInterface {
             CREATE TABLE "workflows" (
                 "id" varchar PRIMARY KEY NOT NULL,
                 "name" varchar NOT NULL,
-                "userId" varchar NOT NULL,
+                "userId" uuid NOT NULL,
                 "createdAt" TIMESTAMP NOT NULL DEFAULT NOW(),
                 "updatedAt" TIMESTAMP NOT NULL DEFAULT NOW(),
                 CONSTRAINT "FK_workflows_userId" FOREIGN KEY ("userId") REFERENCES "user" ("id") ON DELETE CASCADE ON UPDATE NO ACTION
@@ -59,7 +59,7 @@ export class InitPostgres1762220104380 implements MigrationInterface {
                 "name" varchar NOT NULL,
                 "type" varchar NOT NULL,
                 "encryptedData" varchar NOT NULL,
-                "userId" varchar NOT NULL,
+                "userId" uuid NOT NULL,
                 "createdAt" TIMESTAMP NOT NULL DEFAULT NOW(),
                 "updatedAt" TIMESTAMP NOT NULL DEFAULT NOW(),
                 CONSTRAINT "FK_credentials_userId" FOREIGN KEY ("userId") REFERENCES "user" ("id") ON DELETE CASCADE ON UPDATE NO ACTION
